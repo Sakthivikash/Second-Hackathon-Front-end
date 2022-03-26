@@ -1,38 +1,321 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  justify-self: center;
+  align-content: center;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.navbar{
+  background-color: #5b646d;
+}
+.logo-img{
+   height: 100%;
+  width: 100%;
+  object-fit: fill;
+
+}
+.seatbooking-container{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
+
+}
+.seatbooking-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  background-color: #2C3E50;
+  width: 100%;
+  height: 100%;
+  color: rgb(243, 239, 239);
+  padding: 20px;
+}
+.seatbooking-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  background-color: #2C3E50;
+  width: 100%;
+  height: 100%;
+  color: darkgrey;
+  padding: 20px;
+}
+.no-tickets,.showtime{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.seatno-inp{
+  width: 90px;
+  height: 35px;
+  font-size: 18px;
+  padding: 10px;
+}
+.seat-time{
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  height: 35px;
+  background-color: #58D68D;
   color: white;
+  align-items: center;
+  align-content: center;
+  padding: 5px;
+}
+.theater-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  padding: 10px;
+}
+.theaters-container, .theaters-list{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.theater{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: auto;
+  margin-right: 600px;
+  text-align: start;
+}
+.timing{
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.header{
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin: 10px;
+  height: 270px;
+  align-items: center;
+}
+.head-img{
+  height: 250px;
+  width: 200px;
+}
+.logo{
+  height: 60px;
+  width: 140px;
+  margin-top:10px;
+  border-radius: 5px;
+}
+h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.inputdata{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(247, 247, 248); */
+  border-radius: 10px;
+  width: 900px;
+  padding: 20px;
+  box-shadow: inset 5px 5px 3px rgb(175, 173, 173), 5px 5px 5px rgb(128, 126, 126);
+  margin: 10px;
+}
+.inputs{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  /* row-gap: 20px; */
+}
+.outlined-basic{
+  width: 800px;
+  border-radius: 5px;
+}
+#addbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.addbtn{
+  align-items: center;
+  width: 400px;
+  height: 40px;
+  margin: 10px;
+  
+  width: 800px;
+  /* background-color: rgb(10, 241, 114); */
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+}
+.tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.film{
+  border-radius: 5px;
+  background: rgb(230, 5, 5);
+  font-size: 18px;
+  box-shadow: inset 2px 2px 5px rgb(102, 4, 4), inset -2px -2px 5px rgb(102, 4, 4);
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+}
+.container{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+#main {
+  margin: 10px;
+  width: 340px;
+  font-size: 17px;
+  font-weight: 500;
+  height: min-content;
+  border-radius: 10px;
+ 
+}
+.image{
+  padding: 10px;
+}
+.img { 
+  height: 500px;
+  width: 320px;
+  object-fit:cover;
+  border-radius: 5px;
+}
+#content{
+  width: 330px;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.sum{
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+i{
+  color: rgb(241, 226, 10);
+  text-shadow: 2px 2px rgb(240, 134, 14);
+}
+#togbtn{
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+}
+.clr{
+  margin: 10px 0px 10px 10px;
+  width:150px;
+  height:20px;
 }
 
-.App-link {
-  color: #61dafb;
+.not-found{
+  background: none;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  
+}
+#img-404{
+  width: 100%;
+  max-height: 700px;
+}
+/* h1{
+  text-align: center;
+  margin: 20px;
+  width: 1000px;
+} */
+.movie-details{
+  width: 1200px;
+  padding: 24px;
+}
+#color-box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="app"] {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.seats-row{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+}
+.seats-container{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 20px;
+}
+.seatno{
+  height: 25px; 
+  width: 25px;
+  border: 2px solid #58D68D;
+  margin: 3px;
+  padding: 3px;
+  color: grey;
+  font-size: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+.row-seats{
+  height: 25px; 
+  width: 25px;
+  margin: 3px;
+  padding: 3px;
+  color: grey;
+  font-size: 15px;
+  text-align: center;
+}
+.seatno:hover{
+  background-color: #03a145;
+  color: white;
+  cursor: pointer;
+}
+.seatno:active{
+  background-color: #06833a;
+  color: white;
+  cursor: pointer;
 }

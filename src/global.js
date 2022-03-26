@@ -1,0 +1,1 @@
+export const API= "https://sakthivikash-app.herokuapp.com/movies";

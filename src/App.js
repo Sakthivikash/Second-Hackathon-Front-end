@@ -1,25 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "./App.css";
+import { Switch, Route, Link } from "react-router-dom";
+import { Movies } from "./Movies";
+import { NotFound } from "./NotFound";
+import { AddMovie } from "./AddMovie";
+import { MovieDetail } from "./MovieDetail";
+import { EditMovie } from "./EditMovie";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { useState } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { Theaters } from "./Theaters";
+import { SeatBooking } from "./SeatBooking";
 
-function App() {
+export default function App() {
+  const history = useHistory();
+  const [mode, setMode] = useState("light");
+  const theme = createTheme({
+    palette: {
+      mode: mode,
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ThemeProvider theme={theme}>
+      <Paper style={{ borderRadius: "none", minHeight: "100vh" }} elevation={4} >
+        <div className="App">
+          <AppBar position="static">
+            <Toolbar className="navbar">
+              <Typography variant="h6"  component="div" sx={{ flexGrow: 1 }}>
+              <span><img className="logo" src="https://png.pngitem.com/pimgs/s/578-5784441_bookmyshow-nextbigbrand-transparent-book-my-show-logo-hd.png" alt="logo"></img></span>
+                </Typography>
+              <Button color="inherit" onClick={() => history.push("/")}> Home </Button>
+              <Button color="inherit" onClick={() => history.push("/movies")}>  Movies</Button>
+              {/* <Button color="inherit" onClick={() => history.push("/addmovie")}>AddMovie</Button> */}
+              <Button color="inherit"
+                startIcon={mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+                onClick={() => setMode(mode === "light" ? "dark" : "light")
+                }>
+              </Button>
+            </Toolbar>
+          </AppBar>
+
+          <hr />
+
+          <Switch>
+            {/* Each route is case, eg. - case '/about': */}
+            {/* Match url display the below component */}
+
+            <Route path="/:id/booking/:time"><SeatBooking /></Route>
+            <Route path="/:id/theaters"><Theaters /></Route>
+            <Route path="/movies/:id"><MovieDetail /></Route>
+            <Route path="/movies"><Movies /></Route>
+            <Route path="/addmovie"><AddMovie /></Route>
+            <Route path="/movie/edit/:id"><EditMovie /></Route>
+            <Route exact path="/"> <Home /> </Route>
+            <Route path="**"><NotFound /> </Route>
+          </Switch>
+
+        </div>
+      </Paper>
+    </ThemeProvider>
+  );
+}
+function Home() {
+  return (
+    <div className="box">
+      <h1>Welcome All 🎉🎉✨</h1>
     </div>
   );
 }
 
-export default App;
